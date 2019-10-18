@@ -2,7 +2,7 @@ function setup(){
 	createCanvas(320,400);
 //brown background
 }
-function draw{
+function draw(){
 fill(92,52,40);
 noStroke();
 quad(92,0,194,400,320,400,320,0);
