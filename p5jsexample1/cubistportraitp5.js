@@ -1,8 +1,19 @@
+let mic;
 function setup(){
 	createCanvas(320,400);
 //brown background
+  // Create an Audio input
+  mic = new p5.AudioIn();
+
+  // start the Audio Input.
+  // By default, it does not .connect() (to the computer speakers)
+  mic.start();
 }
 function draw(){
+  // Get the overall volume (between 0 and 1.0)
+  let vol = mic.getLevel();
+  // Draw an ellipse with height based on volume
+  let h = map(vol, 0, 1, 0,1000);
 fill(92,52,40);
 noStroke();
 quad(92,0,194,400,320,400,320,0);
@@ -28,7 +39,7 @@ triangle(186,368,174,46,118, 102);
 //mouth line
 stroke(0);
 strokeWeight(5);
-line(184,265,154,269);
+line(184,265,154+h,269+h);
 //chin
 fill(148,159,81);
 quad(103,285,119,339,184,358,163,286);
