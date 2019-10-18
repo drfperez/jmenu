@@ -12,7 +12,7 @@ function setup(){
 function draw(){
   // Get the overall volume (between 0 and 1.0)
   let vol = mic.getLevel();
-  // Draw an ellipse with height based on volume
+  // Draw a variable h in mouth with height based on volume
   let h = map(vol, 0, 1, 0,1000);
 fill(92,52,40);
 noStroke();
